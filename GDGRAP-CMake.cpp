@@ -1,4 +1,5 @@
 ﻿#include <GLFW/glfw3.h>
+#define _USE_MATH_DEFINES
 #include <cmath>
 
 int main(void)
@@ -10,7 +11,7 @@ int main(void)
         return -1;
 
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(640, 480, "GDGRAPH", NULL, NULL);
+    window = glfwCreateWindow(640, 640, "EJ Taylan", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
@@ -32,9 +33,9 @@ int main(void)
         glVertex2f(0.5f, -0.5f);*/
 
         //Creating a nonagon
-        int sides = 9;
-        float centerX = 0.0f, centerY = 0.0f, radius = 0.5f;
-        float angle = 40 * 3.1415 / 180; //deg to radse
+        int sides = 9, degs = 40;
+        float centerX = 0.0f, centerY = 0.5f, radius = 0.5f;
+        float angle = degs * M_PI / 180; //deg to rads
 
         for (int i = 0; i < sides; i++)
         {
