@@ -41,17 +41,52 @@ include CMakeFiles\rules.ninja
 
 cmake_ninja_workdir = C$:\Users\ej\source\repos\GDGRAP-CMake\out\build\x64-debug\
 # =============================================================================
+# Object build statements for STATIC_LIBRARY target glad_gl_core_46
+
+
+#############################################
+# Order-only phony target for glad_gl_core_46
+
+build cmake_object_order_depends_target_glad_gl_core_46: phony || gladsources\glad_gl_core_46\args.txt gladsources\glad_gl_core_46\include\KHR\khrplatform.h gladsources\glad_gl_core_46\include\glad\gl.h gladsources\glad_gl_core_46\src\gl.c
+
+build CMakeFiles\glad_gl_core_46.dir\gladsources\glad_gl_core_46\src\gl.c.obj: C_COMPILER__glad_gl_core_46_unscanned_Debug C$:\Users\ej\source\repos\GDGRAP-CMake\out\build\x64-debug\gladsources\glad_gl_core_46\src\gl.c || cmake_object_order_depends_target_glad_gl_core_46
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI
+  INCLUDES = -IC:\Users\ej\source\repos\GDGRAP-CMake\out\build\x64-debug\gladsources\glad_gl_core_46\include
+  OBJECT_DIR = CMakeFiles\glad_gl_core_46.dir
+  OBJECT_FILE_DIR = CMakeFiles\glad_gl_core_46.dir\gladsources\glad_gl_core_46\src
+  TARGET_COMPILE_PDB = CMakeFiles\glad_gl_core_46.dir\glad_gl_core_46.pdb
+  TARGET_PDB = glad_gl_core_46.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target glad_gl_core_46
+
+
+#############################################
+# Link the static library glad_gl_core_46.lib
+
+build glad_gl_core_46.lib: C_STATIC_LIBRARY_LINKER__glad_gl_core_46_Debug CMakeFiles\glad_gl_core_46.dir\gladsources\glad_gl_core_46\src\gl.c.obj
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI
+  LINK_FLAGS = /machine:x64
+  OBJECT_DIR = CMakeFiles\glad_gl_core_46.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\glad_gl_core_46.dir\glad_gl_core_46.pdb
+  TARGET_FILE = glad_gl_core_46.lib
+  TARGET_PDB = glad_gl_core_46.pdb
+
+# =============================================================================
 # Object build statements for EXECUTABLE target GDGRAP-CMake
 
 
 #############################################
 # Order-only phony target for GDGRAP-CMake
 
-build cmake_object_order_depends_target_GDGRAP-CMake: phony || cmake_object_order_depends_target_glfw
+build cmake_object_order_depends_target_GDGRAP-CMake: phony || cmake_object_order_depends_target_glad_gl_core_46 cmake_object_order_depends_target_glfw cmake_object_order_depends_target_glm
 
 build CMakeFiles\GDGRAP-CMake.dir\GDGRAP-CMake.cpp.obj: CXX_COMPILER__GDGRAP-CMake_unscanned_Debug C$:\Users\ej\source\repos\GDGRAP-CMake\GDGRAP-CMake.cpp || cmake_object_order_depends_target_GDGRAP-CMake
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++20 -ZI
-  INCLUDES = -IC:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\include
+  INCLUDES = -IC:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\include -IC:\Users\ej\source\repos\GDGRAP-CMake\out\build\x64-debug\gladsources\glad_gl_core_46\include -IC:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-src
   OBJECT_DIR = CMakeFiles\GDGRAP-CMake.dir
   OBJECT_FILE_DIR = CMakeFiles\GDGRAP-CMake.dir
   TARGET_COMPILE_PDB = CMakeFiles\GDGRAP-CMake.dir\
@@ -65,12 +100,12 @@ build CMakeFiles\GDGRAP-CMake.dir\GDGRAP-CMake.cpp.obj: CXX_COMPILER__GDGRAP-CMa
 #############################################
 # Link the executable GDGRAP-CMake.exe
 
-build GDGRAP-CMake.exe: CXX_EXECUTABLE_LINKER__GDGRAP-CMake_Debug CMakeFiles\GDGRAP-CMake.dir\GDGRAP-CMake.cpp.obj | C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-build\src\glfw3.lib || C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-build\src\glfw3.lib
+build GDGRAP-CMake.exe: CXX_EXECUTABLE_LINKER__GDGRAP-CMake_Debug CMakeFiles\GDGRAP-CMake.dir\GDGRAP-CMake.cpp.obj | C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-build\src\glfw3.lib glad_gl_core_46.lib C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\glm.lib || C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-build\src\glfw3.lib C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\glm.lib glad_gl_core_46.lib
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-build\src\glfw3.lib  opengl32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_LIBRARIES = C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-build\src\glfw3.lib  opengl32.lib  glad_gl_core_46.lib  C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\glm.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = CMakeFiles\GDGRAP-CMake.dir
-  POST_BUILD = cd .
+  POST_BUILD = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\ej\source\repos\GDGRAP-CMake\out\build\x64-debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_directory C:/Users/ej/source/repos/GDGRAP-CMake/3D C:/Users/ej/source/repos/GDGRAP-CMake/out/build/x64-debug/3D && cd /D C:\Users\ej\source\repos\GDGRAP-CMake\out\build\x64-debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_directory C:/Users/ej/source/repos/GDGRAP-CMake/Shaders C:/Users/ej/source/repos/GDGRAP-CMake/out/build/x64-debug/Shaders"
   PRE_LINK = cd .
   TARGET_COMPILE_PDB = CMakeFiles\GDGRAP-CMake.dir\
   TARGET_FILE = GDGRAP-CMake.exe
@@ -129,6 +164,16 @@ build CMakeFiles\install\local.util: CUSTOM_COMMAND all
   restat = 1
 
 build install\local: phony CMakeFiles\install\local.util
+
+
+#############################################
+# Custom command for gladsources\glad_gl_core_46\include\KHR\khrplatform.h
+
+build gladsources\glad_gl_core_46\include\KHR\khrplatform.h gladsources\glad_gl_core_46\include\glad\gl.h gladsources\glad_gl_core_46\src\gl.c gladsources\glad_gl_core_46\args.txt | ${cmake_ninja_workdir}gladsources\glad_gl_core_46\include\KHR\khrplatform.h ${cmake_ninja_workdir}gladsources\glad_gl_core_46\include\glad\gl.h ${cmake_ninja_workdir}gladsources\glad_gl_core_46\src\gl.c ${cmake_ninja_workdir}gladsources\glad_gl_core_46\args.txt: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-src && echo Cleaning C:/Users/ej/source/repos/GDGRAP-CMake/out/build/x64-debug/gladsources/glad_gl_core_46 && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E remove_directory C:/Users/ej/source/repos/GDGRAP-CMake/out/build/x64-debug/gladsources/glad_gl_core_46 && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/ej/source/repos/GDGRAP-CMake/out/build/x64-debug/gladsources/glad_gl_core_46 && echo Generating with args --out-path C:/Users/ej/source/repos/GDGRAP-CMake/out/build/x64-debug/gladsources/glad_gl_core_46 --api gl:core=4.6 --reproducible c --loader && C:\Users\ej\AppData\Local\Programs\Python\Python312\python.exe -m glad --out-path C:/Users/ej/source/repos/GDGRAP-CMake/out/build/x64-debug/gladsources/glad_gl_core_46 --api gl:core=4.6 --reproducible c --loader && echo Writing C:/Users/ej/source/repos/GDGRAP-CMake/out/build/x64-debug/gladsources/glad_gl_core_46/args.txt && echo --out-path C:/Users/ej/source/repos/GDGRAP-CMake/out/build/x64-debug/gladsources/glad_gl_core_46 --api gl:core=4.6 --reproducible c --loader > C:/Users/ej/source/repos/GDGRAP-CMake/out/build/x64-debug/gladsources/glad_gl_core_46/args.txt"
+  DESC = glad_gl_core_46-generate
+  pool = console
+  restat = 1
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -490,13 +535,228 @@ build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-build\src\CMakeFile
   DESC = Updating gamepad mappings from upstream repository
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/ej/source/repos/GDGRAP-CMake/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\edit_cache: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Users\ej\source\repos\GDGRAP-CMake -BC:\Users\ej\source\repos\GDGRAP-CMake\out\build\x64-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\rebuild_cache: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\CMakeFiles\install.util: CUSTOM_COMMAND C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\install: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\CMakeFiles\install\local.util: CUSTOM_COMMAND C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\install\local: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\CMakeFiles\install\local.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/ej/source/repos/GDGRAP-CMake/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\edit_cache: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Users\ej\source\repos\GDGRAP-CMake -BC:\Users\ej\source\repos\GDGRAP-CMake\out\build\x64-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\rebuild_cache: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\CMakeFiles\install.util: CUSTOM_COMMAND C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\install: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\CMakeFiles\install\local.util: CUSTOM_COMMAND C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\install\local: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\CMakeFiles\install\local.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target glm
+
+
+#############################################
+# Order-only phony target for glm
+
+build cmake_object_order_depends_target_glm: phony || .
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\CMakeFiles\glm.dir\detail\glm.cpp.obj: CXX_COMPILER__glm_unscanned_Debug C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-src\glm\detail\glm.cpp || cmake_object_order_depends_target_glm
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI /Za /fp:precise
+  INCLUDES = -IC:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-src
+  OBJECT_DIR = C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\CMakeFiles\glm.dir
+  OBJECT_FILE_DIR = C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\CMakeFiles\glm.dir\detail
+  TARGET_COMPILE_PDB = C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\CMakeFiles\glm.dir\glm.pdb
+  TARGET_PDB = C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\glm.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target glm
+
+
+#############################################
+# Link the static library C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\glm.lib
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\glm.lib: CXX_STATIC_LIBRARY_LINKER__glm_Debug C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\CMakeFiles\glm.dir\detail\glm.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI
+  LINK_FLAGS = /machine:x64
+  OBJECT_DIR = C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\CMakeFiles\glm.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\CMakeFiles\glm.dir\glm.pdb
+  TARGET_FILE = C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\glm.lib
+  TARGET_PDB = C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\glm.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\edit_cache: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Users\ej\source\repos\GDGRAP-CMake -BC:\Users\ej\source\repos\GDGRAP-CMake\out\build\x64-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\rebuild_cache: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\CMakeFiles\install.util: CUSTOM_COMMAND C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\install: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\CMakeFiles\install\local.util: CUSTOM_COMMAND C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\install\local: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\CMakeFiles\install\local.util
+
+# =============================================================================
 # Target aliases.
 
 build GDGRAP-CMake: phony GDGRAP-CMake.exe
 
+build glad_gl_core_46: phony glad_gl_core_46.lib
+
 build glfw: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-build\src\glfw3.lib
 
 build glfw3.lib: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-build\src\glfw3.lib
+
+build glm: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\glm.lib
+
+build glm.lib: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\glm.lib
 
 build uninstall: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-build\uninstall
 
@@ -510,7 +770,14 @@ build update_mappings: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\g
 #############################################
 # Folder: C:/Users/ej/source/repos/GDGRAP-CMake/out/build/x64-debug
 
-build all: phony GDGRAP-CMake.exe C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-build\all
+build all: phony glad_gl_core_46.lib GDGRAP-CMake.exe C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-build\all C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\all C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glad-build
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-build\all: phony
 
 # =============================================================================
 
@@ -527,20 +794,34 @@ build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-build\all: phony C$
 build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-build\src\all: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-build\src\glfw3.lib
 
 # =============================================================================
+
+#############################################
+# Folder: C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-build
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\all: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-build/glm
+
+build C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\all: phony C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-build\glm\glm.lib
+
+# =============================================================================
 # Built-in targets
 
 
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\BasicConfigVersion-SameMajorVersion.cmake.in C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDependentOption.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakePackageConfigHelpers.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CheckCSourceCompiles.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CheckIncludeFile.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CheckLibraryExists.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\ExternalProject\shared_internal_commands.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FetchContent.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FetchContent\CMakeLists.cmake.in C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindGit.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindOpenGL.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindPackageMessage.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindThreads.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\GNUInstallDirs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CheckSourceCompiles.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\WriteBasicConfigVersionFile.cmake C$:\Users\ej\source\repos\GDGRAP-CMake\CMakeLists.txt C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\CMakeLists.txt C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\CMake\cmake_uninstall.cmake.in C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\CMake\glfw3.pc.in C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\CMake\glfw3Config.cmake.in C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\src\CMakeLists.txt CMakeCache.txt CMakeFiles\3.31.6-msvc6\CMakeCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeCXXCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeRCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\BasicConfigVersion-SameMajorVersion.cmake.in C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDependentOption.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakePackageConfigHelpers.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CheckCSourceCompiles.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CheckIncludeFile.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CheckLibraryExists.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\ExternalProject\shared_internal_commands.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FetchContent.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FetchContent\CMakeLists.cmake.in C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindGit.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindOpenGL.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindPackageMessage.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindPython.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindPython\Support.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindThreads.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\GNUInstallDirs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CheckSourceCompiles.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\WriteBasicConfigVersionFile.cmake C$:\Users\ej\source\repos\GDGRAP-CMake\CMakeLists.txt C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-src\cmake\CMakeLists.txt C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-src\cmake\GladConfig.cmake C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\CMakeLists.txt C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\CMake\cmake_uninstall.cmake.in C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\CMake\glfw3.pc.in C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\CMake\glfw3Config.cmake.in C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\src\CMakeLists.txt C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-src\CMakeLists.txt C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-src\glm\CMakeLists.txt CMakeCache.txt CMakeFiles\3.31.6-msvc6\CMakeCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeCXXCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeRCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\BasicConfigVersion-SameMajorVersion.cmake.in C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDependentOption.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakePackageConfigHelpers.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CheckCSourceCompiles.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CheckIncludeFile.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CheckLibraryExists.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\ExternalProject\shared_internal_commands.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FetchContent.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FetchContent\CMakeLists.cmake.in C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindGit.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindOpenGL.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindPackageMessage.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindThreads.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\GNUInstallDirs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CheckSourceCompiles.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\WriteBasicConfigVersionFile.cmake C$:\Users\ej\source\repos\GDGRAP-CMake\CMakeLists.txt C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\CMakeLists.txt C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\CMake\cmake_uninstall.cmake.in C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\CMake\glfw3.pc.in C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\CMake\glfw3Config.cmake.in C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\src\CMakeLists.txt CMakeCache.txt CMakeFiles\3.31.6-msvc6\CMakeCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeCXXCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeRCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeSystem.cmake: phony
+build C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\BasicConfigVersion-SameMajorVersion.cmake.in C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDependentOption.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakePackageConfigHelpers.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CheckCSourceCompiles.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CheckIncludeFile.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CheckLibraryExists.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\ExternalProject\shared_internal_commands.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FetchContent.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FetchContent\CMakeLists.cmake.in C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindGit.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindOpenGL.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindPackageMessage.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindPython.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindPython\Support.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\FindThreads.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\GNUInstallDirs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CheckSourceCompiles.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\WriteBasicConfigVersionFile.cmake C$:\Users\ej\source\repos\GDGRAP-CMake\CMakeLists.txt C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-src\cmake\CMakeLists.txt C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glad-src\cmake\GladConfig.cmake C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\CMakeLists.txt C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\CMake\cmake_uninstall.cmake.in C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\CMake\glfw3.pc.in C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\CMake\glfw3Config.cmake.in C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glfw-src\src\CMakeLists.txt C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-src\CMakeLists.txt C$:\Users\ej\source\repos\GDGRAP-CMake\thirdparty\glm-src\glm\CMakeLists.txt CMakeCache.txt CMakeFiles\3.31.6-msvc6\CMakeCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeCXXCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeRCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeSystem.cmake: phony
 
 
 #############################################

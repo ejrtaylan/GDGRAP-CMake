@@ -1,3 +1,4 @@
+C:/Users/ej/source/repos/GDGRAP-CMake/out/build/x64-debug/CMakeFiles/glad_gl_core_46.dir
 C:/Users/ej/source/repos/GDGRAP-CMake/out/build/x64-debug/CMakeFiles/GDGRAP-CMake.dir
 C:/Users/ej/source/repos/GDGRAP-CMake/out/build/x64-debug/CMakeFiles/edit_cache.dir
 C:/Users/ej/source/repos/GDGRAP-CMake/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
@@ -17,3 +18,19 @@ C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glfw-build/src/CMakeFiles/rebui
 C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glfw-build/src/CMakeFiles/list_install_components.dir
 C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glfw-build/src/CMakeFiles/install.dir
 C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glfw-build/src/CMakeFiles/install/local.dir
+C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glad-build/CMakeFiles/edit_cache.dir
+C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glad-build/CMakeFiles/rebuild_cache.dir
+C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glad-build/CMakeFiles/list_install_components.dir
+C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glad-build/CMakeFiles/install.dir
+C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glad-build/CMakeFiles/install/local.dir
+C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-build/CMakeFiles/edit_cache.dir
+C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-build/CMakeFiles/rebuild_cache.dir
+C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-build/CMakeFiles/list_install_components.dir
+C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-build/CMakeFiles/install.dir
+C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-build/CMakeFiles/install/local.dir
+C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-build/glm/CMakeFiles/glm.dir
+C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-build/glm/CMakeFiles/edit_cache.dir
+C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-build/glm/CMakeFiles/rebuild_cache.dir
+C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-build/glm/CMakeFiles/list_install_components.dir
+C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-build/glm/CMakeFiles/install.dir
+C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-build/glm/CMakeFiles/install/local.dir

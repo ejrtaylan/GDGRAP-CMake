@@ -8,7 +8,9 @@
 					"build" : ".",
 					"childIndexes" : 
 					[
-						1
+						1,
+						3,
+						4
 					],
 					"hasInstallRule" : true,
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
@@ -20,7 +22,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				},
 				{
@@ -30,7 +33,7 @@
 						2
 					],
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-thirdparty.glfw-src-Debug-8f0f91ee817e3425ac1d.json",
+					"jsonFile" : "directory-thirdparty.glfw-src-Debug-021cb721383d0c91c8ac.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.4"
@@ -40,13 +43,13 @@
 					"source" : "thirdparty/glfw-src",
 					"targetIndexes" : 
 					[
-						2
+						4
 					]
 				},
 				{
 					"build" : "C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glfw-build/src",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-thirdparty.glfw-src.src-Debug-b978a906b1bc6c11911d.json",
+					"jsonFile" : "directory-thirdparty.glfw-src.src-Debug-4ef269cac6d81d764e2c.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.4"
@@ -56,7 +59,48 @@
 					"source" : "thirdparty/glfw-src/src",
 					"targetIndexes" : 
 					[
-						1,
+						2,
+						5
+					]
+				},
+				{
+					"build" : "C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glad-build",
+					"jsonFile" : "directory-thirdparty.glad-src.cmake-Debug-cff5a316bd281dc75a22.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "thirdparty/glad-src/cmake"
+				},
+				{
+					"build" : "C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-build",
+					"childIndexes" : 
+					[
+						5
+					],
+					"jsonFile" : "directory-thirdparty.glm-src-Debug-0cbd071f0eb5d291cd49.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "thirdparty/glm-src"
+				},
+				{
+					"build" : "C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-build/glm",
+					"jsonFile" : "directory-thirdparty.glm-src.glm-Debug-ae542e0407febd6e35c3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 3,
+					"source" : "thirdparty/glm-src/glm",
+					"targetIndexes" : 
+					[
 						3
 					]
 				}
@@ -67,7 +111,9 @@
 				{
 					"childIndexes" : 
 					[
-						1
+						1,
+						2,
+						3
 					],
 					"directoryIndexes" : 
 					[
@@ -76,7 +122,8 @@
 					"name" : "GDGRAP-CMake",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				},
 				{
@@ -89,8 +136,29 @@
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
-						1,
 						2,
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "glad",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4,
+						5
+					],
+					"name" : "glm",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
 						3
 					]
 				}
@@ -100,8 +168,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "GDGRAP-CMake::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-GDGRAP-CMake-Debug-6b32caf2fc9c396d1420.json",
+					"jsonFile" : "target-GDGRAP-CMake-Debug-059d02fda7bab087f915.json",
 					"name" : "GDGRAP-CMake",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "glad_gl_core_46::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-glad_gl_core_46-Debug-b347a87e200016f80e6a.json",
+					"name" : "glad_gl_core_46",
 					"projectIndex" : 0
 				},
 				{
@@ -110,6 +185,13 @@
 					"jsonFile" : "target-glfw-Debug-f80df19a18c1bfcd54fd.json",
 					"name" : "glfw",
 					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "glm::@b675b59cc20360ffd7a2",
+					"jsonFile" : "target-glm-Debug-9c5e86332b1a640a4ffb.json",
+					"name" : "glm",
+					"projectIndex" : 3
 				},
 				{
 					"directoryIndex" : 1,

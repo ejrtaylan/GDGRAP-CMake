@@ -32,17 +32,61 @@ set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 #Set GLFW for this project
 FetchContent_MakeAvailable(glfw)
 
+FetchContent_Declare(
+	glad
+	GIT_REPOSITORY https://github.com/Dav1dde/glad.git
+	GIT_TAG v2.0.6
+	SOURCE_SUBDIR cmake
+)
+
+FetchContent_MakeAvailable(glad)
+
+glad_add_library(
+	glad_gl_core_46 STATIC
+	REPRODUCIBLE
+	LOADER
+	API gl:core=4.6
+)
+
+FetchContent_Declare(
+	glm
+	GIT_REPOSITORY https://github.com/g-truc/glm.git
+	GIT_TAG		   1.0.1
+)
+
+FetchContent_MakeAvailable(glm)
+
 #OpenGL should be preinstalled
 find_package(OpenGL REQUIRED)
 
 # Add source to this project's executable.
 # Change these to your files
-add_executable (GDGRAP-CMake "GDGRAP-CMake.cpp" "GDGRAP-CMake.h")
+add_executable (GDGRAP-CMake "GDGRAP-CMake.cpp" "GDGRAP-CMake.h" "tiny_obj_loader.h" "stb_image.h")
 
 #Link the required libraries
 target_link_libraries(GDGRAP-CMake 
 						glfw
 						OpenGL::GL
+						glad_gl_core_46
+						glm::glm
+)
+
+add_custom_command(
+	TARGET GDGRAP-CMake
+	POST_BUILD
+	COMMAND ${CMAKE_COMMAND} -E copy_directory
+		"${CMAKE_CURRENT_SOURCE_DIR}/3D"
+		"$<TARGET_FILE_DIR:GDGRAP-CMake>/3D"
+	COMMENT "Copying assets to build dir"
+)
+
+add_custom_command(
+	TARGET GDGRAP-CMake
+	POST_BUILD
+	COMMAND ${CMAKE_COMMAND} -E copy_directory
+		"${CMAKE_CURRENT_SOURCE_DIR}/Shaders"
+		"$<TARGET_FILE_DIR:GDGRAP-CMake>/Shaders"
+	COMMENT "Copying shdaers to build dir"
 )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)

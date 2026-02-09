@@ -29,19 +29,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 40,
+				"line" : 64,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 43,
+				"line" : 67,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 49,
+				"line" : 93,
 				"parent" : 0
 			}
 		]
@@ -60,6 +60,14 @@
 				{
 					"backtrace" : 2,
 					"path" : "C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glfw-src/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/ej/source/repos/GDGRAP-CMake/out/build/x64-debug/gladsources/glad_gl_core_46/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/ej/source/repos/GDGRAP-CMake/thirdparty/glm-src"
 				}
 			],
 			"language" : "CXX",
@@ -81,7 +89,15 @@
 	[
 		{
 			"backtrace" : 2,
+			"id" : "glad_gl_core_46::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
 			"id" : "glfw::@ad29063717ed0915ca14"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "glm::@b675b59cc20360ffd7a2"
 		}
 	],
 	"id" : "GDGRAP-CMake::@6890427a1f51a3e7e1df",
@@ -105,6 +121,16 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "opengl32.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "glad_gl_core_46.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "C:\\Users\\ej\\source\\repos\\GDGRAP-CMake\\thirdparty\\glm-build\\glm\\glm.lib",
 				"role" : "libraries"
 			},
 			{
@@ -134,7 +160,9 @@
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				1
+				1,
+				2,
+				3
 			]
 		}
 	],
@@ -149,6 +177,16 @@
 		{
 			"backtrace" : 1,
 			"path" : "GDGRAP-CMake.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "tiny_obj_loader.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "stb_image.h",
 			"sourceGroupIndex" : 1
 		}
 	],
